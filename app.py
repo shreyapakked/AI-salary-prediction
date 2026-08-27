@@ -36,7 +36,7 @@ if st.sidebar.button('predict package'):
     try:
         cgpa=float(cgpa)
         if cgpa>=0 and cgpa<=10:
-            prediction = model.predict(np.array([[cgpa]])
+            prediction = model.predict(np.array([[cgpa]]))
             st.success(f"Predicted Package: {prediction[0][0]:.2f} LPA")
     
 
