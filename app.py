@@ -29,19 +29,17 @@ print("testing accuracy:",test_ac)
 model=LinearRegression()
 model.fit(x,y)
 st.title("PACKAGE PREDICTOR")
-st.write("enter your CGPA to get package prediction")
-
 st.sidebar.header("Enter your details")
-
 cgpa=st.sidebar.text_input("enter your CGPA")
-
 if st.sidebar.button('predict package'):
     try:
         cgpa=float(cgpa)
-        input_data=pd.DataFrame({'cgpa':[cgpa]})
-        prediction = model.predict(input_data)
+        if cgpa>=0 and cgpa<=10:
+            input_data=pd.DataFrame({'cgpa':[cgpa]})
+            prediction = model.predict(input_data)
+            st.success(f"Predicted Package: {prediction[0][0]:.2f} LPA")
+    
 
-
-        st.success(f"Predicted Package: {prediction[0][0]:.2f} LPA")
+    
     except ValueError:
         st.error("please enter valid input")   
