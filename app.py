@@ -3,7 +3,7 @@ import pandas as pd
 import streamlit as st
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LinearRegression
-d= pd.read_csv("C:/Users/DELL/Downloads/archive (2)/placement.csv")
+d= pd.read_csv("Placement.csv")
 print(d)
 print(d.isnull().sum())
 
