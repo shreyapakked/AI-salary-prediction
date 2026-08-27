@@ -1,5 +1,6 @@
 
 import pandas as pd
+import numpy as np
 import streamlit as st
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LinearRegression
@@ -35,8 +36,7 @@ if st.sidebar.button('predict package'):
     try:
         cgpa=float(cgpa)
         if cgpa>=0 and cgpa<=10:
-            input_data=pd.DataFrame({'cgpa':[cgpa]})
-            prediction = model.predict(input_data)
+            prediction = model.predict(np.array([[cgpa]])
             st.success(f"Predicted Package: {prediction[0][0]:.2f} LPA")
     
 
