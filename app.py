@@ -7,8 +7,8 @@ d= pd.read_csv("C:/Users/DELL/Downloads/archive (2)/placement.csv")
 print(d)
 print(d.isnull().sum())
 
-x=d[['cgpa']]
-y=d[['package']]
+x=d[['CGPA']]
+y=d[['Salary']]
 print(x.shape,y.shape)
 
 x_train,x_test,y_train,y_test=train_test_split(x,y,test_size=0.2)
